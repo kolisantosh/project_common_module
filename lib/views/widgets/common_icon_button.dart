@@ -67,9 +67,9 @@ class CommonIconButton extends StatelessWidget {
             if (imagePath.isNotEmpty && !isLoading)
               SvgPicture.asset(
                 imagePath,
-                height: widthFull ? 23.h : 18.h,
+                height: widthFull ? 35.h : 18.h,
                 colorFilter: ColorFilter.mode(textColor ?? Colors.white, BlendMode.srcIn),
-              ).paddingOnly(right: 10.w),
+              ).paddingOnly(right: 20.w),
             Flexible(
               child: Text(
                 isLoading ? "" : title,

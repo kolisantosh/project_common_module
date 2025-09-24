@@ -6,15 +6,16 @@ import '../../core/utils/src/screen_util.dart';
 
 class AppDivider extends StatelessWidget {
   final bool boxShadow;
-  const AppDivider({super.key, this.boxShadow = true});
+  final double? height;
+  const AppDivider({super.key,this.height, this.boxShadow = true});
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 1.h,
+      height: height??1.h,
       width: ScreenUtil().screenWidth,
       decoration: BoxDecoration(
-        color: AppColors.outLineColor,
+        color: AppColors.textDisableColor.withOpacity(0.3),
         boxShadow:
             boxShadow == false
                 ? null

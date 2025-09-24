@@ -348,14 +348,15 @@ import 'package:project_common_module/core/utils/src/size_extension.dart';
       });
 }*/
 class CommonDialog {
-  static showCommonDialog(context, child) {
+  static showCommonDialog(context, child, {scrollControlDisabledMaxHeightRatio = 9.0 / 16.0}) {
     return showModalBottomSheet(
       backgroundColor: Colors.white,
       elevation: 0,
       context: context,
+      constraints: BoxConstraints.expand(),
       isDismissible: false,
       isScrollControlled: false,
-      // scrollControlDisabledMaxHeightRatio: 0.95,
+      scrollControlDisabledMaxHeightRatio: scrollControlDisabledMaxHeightRatio,
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.only(topLeft: Radius.circular(100.0.w), topRight: Radius.circular(100.0.w))),
       builder: (BuildContext context) {
         return StatefulBuilder(
