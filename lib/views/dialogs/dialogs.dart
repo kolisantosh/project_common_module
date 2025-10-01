@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:project_common_module/core/utils/src/size_extension.dart';
+import 'package:project_common_module/views.dart';
 
 /*showReportFilterDialog(context) {
   final formKey = GlobalKey<FormState>();
@@ -355,22 +355,16 @@ class CommonDialog {
       context: context,
       constraints: BoxConstraints.expand(),
       isDismissible: false,
-      isScrollControlled: false,
+      useSafeArea: true,
       scrollControlDisabledMaxHeightRatio: scrollControlDisabledMaxHeightRatio,
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.only(topLeft: Radius.circular(100.0.w), topRight: Radius.circular(100.0.w))),
       builder: (BuildContext context) {
-        return StatefulBuilder(
-          builder: (context, setState) {
-            return SafeArea(
-              child: Padding(
-                padding: EdgeInsets.fromLTRB(0.w, 60.h, 0.w, MediaQuery.of(context).viewInsets.bottom),
-                child: ClipRRect(
-                  borderRadius: BorderRadius.only(topLeft: Radius.circular(100.0.w), topRight: Radius.circular(100.0.w)),
-                  child: child,
-                ),
-              ),
-            );
-          },
+        return Padding(
+          padding: EdgeInsets.fromLTRB(0.w, 60.h, 0.w, 0.h), //MediaQuery.of(context).viewInsets.bottom
+          child: ClipRRect(
+            borderRadius: BorderRadius.only(topLeft: Radius.circular(100.0.w), topRight: Radius.circular(100.0.w)),
+            child: child,
+          ),
         );
       },
     );

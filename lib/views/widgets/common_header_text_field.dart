@@ -55,7 +55,7 @@ class CommonHeaderTextField extends StatelessWidget {
         if (headerText.isNotEmpty) ...[
           Text(headerText, style: headerStyle??GoogleFonts.inter(fontWeight: FontWeight.w700, fontSize: 35.sp, color: AppColors.textColor)),
         ],
-        SizedBox(height: 7.h),
+        SizedBox(height: 16.h),
         TextFormField(
           focusNode: focusNode,
           textInputAction: textInputAction,
@@ -73,16 +73,16 @@ class CommonHeaderTextField extends StatelessWidget {
             hintText: hintText,
             errorMaxLines: 2,
             hintStyle: hintStyle??GoogleFonts.inter(fontWeight: FontWeight.w500, fontSize: 35.sp, color: AppColors.textDisableColor),
-            border: OutlineInputBorder(borderRadius: BorderRadius.circular(16.r)),
+            border: OutlineInputBorder(borderRadius: BorderRadius.circular(25.r)),
             focusedBorder: OutlineInputBorder(
               borderSide: const BorderSide(color: AppColors.outLineColor),
-              borderRadius: BorderRadius.circular(16.r),
+              borderRadius: BorderRadius.circular(25.r),
             ),
             enabledBorder: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(16.r),
-              borderSide: BorderSide(color: AppColors.outLineColor, width: 2.0.w),
+              borderRadius: BorderRadius.circular(25.r),
+              borderSide: BorderSide(color: AppColors.outLineColor, width: 1.5.w),
             ),
-            contentPadding: EdgeInsets.symmetric(vertical: 14.h, horizontal: 20.w),
+            contentPadding: EdgeInsets.symmetric(vertical: 39.h, horizontal: 20.w),
             suffixIcon: suffix,
           ),
           validator: validator,
@@ -162,7 +162,7 @@ class CommonHeaderTextCenterField extends StatelessWidget {
             hintText: hintText,
             errorMaxLines: 2,
             hintStyle: hintStyle??GoogleFonts.inter(fontWeight: FontWeight.w500, fontSize: 35.sp, color: AppColors.textDisableColor),
-            border: OutlineInputBorder(borderRadius: BorderRadius.circular(16.r)),
+            // border: OutlineInputBorder(borderRadius: BorderRadius.circular(16.r)),
             // focusedBorder: OutlineInputBorder(
             //   borderSide: const BorderSide(color: AppColors.outLineColor),
             //   borderRadius: BorderRadius.circular(16.r),
