@@ -1,4 +1,4 @@
-import 'package:project_common_module/services/data/response/status.dart';
+import 'response.dart';
 
 class ApiResponse<T> {
   final Status status;

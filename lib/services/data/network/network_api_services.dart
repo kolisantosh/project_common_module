@@ -7,7 +7,7 @@ import 'package:http/http.dart' as http;
 import 'package:http/http.dart';
 
 import '../exception/app_exceptions.dart';
-import 'base_api_services.dart';
+import 'network.dart';
 
 /// Class for handling network API requests.
 class NetworkApiService implements BaseApiServices {
@@ -16,13 +16,15 @@ class NetworkApiService implements BaseApiServices {
   /// Throws a [NoInternetException] if there is no internet connection.
   /// Throws a [FetchDataException] if the network request times out.
   @override
-  Future<dynamic> getApi(String url) async {
+  Future<dynamic> getApi(String url, dynamic headers) async {
     if (kDebugMode) {
       print(url);
     }
     dynamic responseJson;
     try {
-      final response = await http.get(Uri.parse(url), headers: {'x-api-key': 'reqres-free-v1'}).timeout(const Duration(seconds: 20));
+      final response = await http
+          .get(Uri.parse(url), headers: headers ?? {'x-api-key': 'reqres-free-v1'})
+          .timeout(const Duration(seconds: 20));
       responseJson = returnResponse(response);
     } on SocketException {
       throw NoInternetException('');
@@ -42,7 +44,7 @@ class NetworkApiService implements BaseApiServices {
   /// Throws a [NoInternetException] if there is no internet connection.
   /// Throws a [FetchDataException] if the network request times out.
   @override
-  Future<dynamic> postApi(String url, dynamic data) async {
+  Future<dynamic> postApi(String url, dynamic headers, dynamic data) async {
     if (kDebugMode) {
       print(url);
       print(data);
@@ -52,7 +54,7 @@ class NetworkApiService implements BaseApiServices {
     try {
       final Response response = await post(
         Uri.parse(url),
-        headers: {'x-api-key': 'reqres-free-v1'},
+        headers: headers ?? {'x-api-key': 'reqres-free-v1'},
         body: data,
       ).timeout(const Duration(seconds: 10));
       responseJson = returnResponse(response);
