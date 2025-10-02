@@ -16,7 +16,7 @@ class NetworkApiService implements BaseApiServices {
   /// Throws a [NoInternetException] if there is no internet connection.
   /// Throws a [FetchDataException] if the network request times out.
   @override
-  Future<dynamic> getApi(String url, dynamic headers) async {
+  Future<dynamic> getApi(String url, { dynamic headers}) async {
     if (kDebugMode) {
       print(url);
     }
@@ -44,7 +44,7 @@ class NetworkApiService implements BaseApiServices {
   /// Throws a [NoInternetException] if there is no internet connection.
   /// Throws a [FetchDataException] if the network request times out.
   @override
-  Future<dynamic> postApi(String url, dynamic headers, dynamic data) async {
+  Future<dynamic> postApi(String url, {dynamic headers, dynamic body}) async {
     if (kDebugMode) {
       print(url);
       print(data);
@@ -55,7 +55,7 @@ class NetworkApiService implements BaseApiServices {
       final Response response = await post(
         Uri.parse(url),
         headers: headers ?? {'x-api-key': 'reqres-free-v1'},
-        body: data,
+        body: body,
       ).timeout(const Duration(seconds: 10));
       responseJson = returnResponse(response);
     } on SocketException {
