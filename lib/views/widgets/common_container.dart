@@ -56,7 +56,7 @@ class CommonContainer extends StatelessWidget {
       child: Column(
         children: [
           Container(
-            color: Colors.black,
+            // color: Colors.black,
             child: CommonAppBar(
               title: title,
               color: appBarColor,

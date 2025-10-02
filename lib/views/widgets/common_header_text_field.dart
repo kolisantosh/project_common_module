@@ -61,7 +61,7 @@ class CommonHeaderTextField extends StatelessWidget {
           textInputAction: textInputAction,
           autovalidateMode: autoValidationMode ?? AutovalidateMode.onUserInteraction,
           keyboardType: keyBoardType,
-          inputFormatters: inputFormatter,
+          inputFormatters: inputFormatter??[LengthLimitingTextInputFormatter(12)],
           controller: controller,
           style: inputStyle??GoogleFonts.inter(fontSize: 35.sp, fontWeight: FontWeight.w600, color: AppColors.textColor),
           //textInputAction: TextInputAction.next,
