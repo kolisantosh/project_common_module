@@ -19,6 +19,7 @@ class NetworkApiService implements BaseApiServices {
   Future<dynamic> getApi(String url, { dynamic headers}) async {
     if (kDebugMode) {
       print(url);
+      print(headers);
     }
     dynamic responseJson;
     try {
@@ -47,7 +48,7 @@ class NetworkApiService implements BaseApiServices {
   Future<dynamic> postApi(String url, {dynamic headers, dynamic body}) async {
     if (kDebugMode) {
       print(url);
-      print(data);
+      print(body);
     }
 
     dynamic responseJson;
