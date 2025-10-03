@@ -74,9 +74,9 @@ class CommonAppBar extends StatelessWidget {
               ? Row(
                 children: [
                   backIcon
-                      ? GestureDetector(
-                        onTap: onTap,
-                        child: Padding(
+                      ? IconButton(
+                        onPressed: onTap,
+                        icon: Padding(
                           padding: padding ?? EdgeInsets.all(15.0.w),
                           child: SvgPicture.asset(backArrow, height: 60.w, width: 60.w),
                         ),
@@ -118,7 +118,7 @@ class CommonAppBar extends StatelessWidget {
                   const SizedBox(),
                   suffix
                       ? IconButton(
-                    onPressed:onTapFilter,
+                        onPressed: onTapFilter,
                         icon: Container(
                           height: 93.w,
                           width: 104.w,
