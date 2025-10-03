@@ -97,9 +97,9 @@ class CommonAppBar extends StatelessWidget {
                     ),
                   ),
                   suffix
-                      ? GestureDetector(
-                        onTap: onTapFilter,
-                        child: Container(
+                      ? IconButton(
+                        onPressed: onTapFilter,
+                        icon: Container(
                           height: 93.w,
                           width: 104.w,
                           decoration: BoxDecoration(
@@ -117,9 +117,9 @@ class CommonAppBar extends StatelessWidget {
                 children: [
                   const SizedBox(),
                   suffix
-                      ? GestureDetector(
-                        onTap: onTapFilter,
-                        child: Container(
+                      ? IconButton(
+                    onPressed:onTapFilter,
+                        icon: Container(
                           height: 93.w,
                           width: 104.w,
                           decoration: BoxDecoration(
