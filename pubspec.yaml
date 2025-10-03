@@ -40,7 +40,16 @@ dependencies:
   google_fonts: ^6.2.0
   dropdown_textfield: ^1.2.0
 
-#  flutter_launcher_icons: ^0.14.2
+
+#
+#  firebase_core: ^3.6.0
+#  firebase_database: ^11.0.0
+#  sqflite: ^2.3.3
+#  path: ^1.9.0
+
+
+
+  #  flutter_launcher_icons: ^0.14.2
   #  app_version_update: ^4.0.1
   intl: any
 #  flutter_animate: ^4.5.2
