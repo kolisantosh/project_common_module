@@ -7,7 +7,7 @@ abstract class BaseApiServices {
 
   /// Sends data to the API using a POST request.
   ///
-  /// Takes a [url] parameter representing the endpoint URL and a [data] parameter
+  /// Takes a [url] parameter representing the endpoint URL and a [body] parameter
   /// representing the data to be sent.
-  Future<dynamic> postApi(String url, {dynamic headers, dynamic data});
+  Future<dynamic> postApi(String url, {dynamic headers, dynamic body});
 }
